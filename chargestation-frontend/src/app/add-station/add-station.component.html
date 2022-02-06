@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>Add new charge station</h2>
+<mat-dialog-content>
+    <div class="example-container">
+        <mat-form-field>
+            <mat-label>City Name</mat-label>
+            <input matInput [(ngModel)]="chargestation.cityName" required autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Latitude</mat-label>
+            <input matInput [(ngModel)]="chargestation.latitude" required autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Longitude</mat-label>
+            <input matInput [(ngModel)]="chargestation.longitude" required autocomplete="off">
+        </mat-form-field>
+        <mat-dialog-actions>
+
+            <button mat-button [disabled]="!chargestation.latitude || !chargestation.longitude" color="primary"
+                (click)="onSubmit()">
+                <mat-icon><span class="material-icons">
+                        library_add
+                    </span></mat-icon>Save
+            </button>
+            <button mat-button color="primary" (click)="dismiss()">
+                <mat-icon>cancel</mat-icon>Cancel
+            </button>
+        </mat-dialog-actions>

@@ -1,0 +1,19 @@
+<agm-map [zoom]="5" [latitude]="latitude" [longitude]="longitude">
+    <agm-marker *ngFor="let data of chargeStation; let i = index" [latitude]="data.latitude"
+        [longitude]="data.longitude" [iconUrl]="icon">
+        <agm-info-window>
+            <div class="row">
+                <div class="col-8">
+                    {{ data.cityName }}<br />
+                    latitude:{{data.latitude}}<br />
+                    longitude:{{data.longitude}}
+                </div>
+                <div class="col-2">
+                    <button mat-icon-button color="warn" (click)="deleteStation(data.id)" title="Delete Charge Station">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </agm-info-window>
+    </agm-marker>
+</agm-map>

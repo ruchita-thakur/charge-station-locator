@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+    <span>Charge Station Locator</span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="openAddStationDialog()">
+            <mat-icon>library_add</mat-icon>
+            Add new station
+        </button>
+        <button mat-menu-item (click)="goToStations()">
+            <mat-icon>remove_red_eye</mat-icon>
+            View all stations
+        </button>
+    </mat-menu>
+    <button mat-button>
+        <mat-icon (click)="goToHome()">home</mat-icon>
+    </button>
+</mat-toolbar>
